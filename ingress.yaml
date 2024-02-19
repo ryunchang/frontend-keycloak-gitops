@@ -3,12 +3,10 @@ kind: Ingress
 metadata:
   name: frontend-keycloak-ingress
   annotations:
-    kubernetes.io/ingress.class: “nginx”
-    ingress.kubernetes.io/rewrite-target: /
-    ingressclass.kubernetes.io/is-default-class: “true”
+    kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: frontend-keycloak.211.252.87.34.nip.io:31860
+    - host: frontend-keycloak.211.252.87.34.nip.io
       http:
         paths:
           - path: /
