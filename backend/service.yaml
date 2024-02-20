@@ -5,7 +5,8 @@ metadata:
 spec:	
   ports:	
   - port: 80	
+    nodePort: 40002
     targetPort: 9080	
   selector:	
     app: backend-keycloak
-  type: ClusterIP
+  type: NodePort
