@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: backend-keycloak
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: backend
+      app: backend-keycloak
   template:
     metadata:
       labels:
-        app: backend
+        app: backend-keycloak
     spec:
       containers:
-      - name: backend
+      - name: backend-keycloak
         image: ghcr.io/ryunchang/springboot_crud_security_keycloak:master
         imagePullPolicy: Always
         env:
