@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: frontend-keycloak.211.252.87.34.nip.io
+    - host: frontend.yoonchang.duckdns.org
       http:
         paths:
           - path: /
