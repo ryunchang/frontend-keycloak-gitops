@@ -21,7 +21,5 @@ spec:
         env:
         - name: BACKEND_API_URL
           value: "backend-keycloak" 
-        - name: backend_host
-          value: "backend-keycloak"
         ports:
         - containerPort: 80
