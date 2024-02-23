@@ -28,9 +28,9 @@ spec:
   host: frontend.apps.okd4.ktdemo.duckdns.org
   port:
     targetPort: 80
-#  tls:
-#    insecureEdgeTerminationPolicy: Redirect
-#    termination: passthrough
+ tls:
+   insecureEdgeTerminationPolicy: Redirect
+   termination: passthrough
   to:
     kind: Service
     name: frontend-keycloak
