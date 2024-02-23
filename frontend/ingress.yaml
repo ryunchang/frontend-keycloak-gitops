@@ -25,7 +25,7 @@ kind: Route
 metadata:
   name: frontend-keycloak
 spec:
-  host: frontend.yoonchang.duckdns.org
+  host: frontend.apps.okd4.ktdemo.duckdns.org
   port:
     targetPort: 80
 #  tls:
