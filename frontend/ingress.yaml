@@ -1,18 +1,38 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+# --- Ingress 용 ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: frontend-keycloak-ingress
+#   annotations:
+#     kubernetes.io/ingress.class: nginx
+# spec:
+#   rules:
+#     - host: frontend.yoonchang.duckdns.org
+#       http:
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: frontend-keycloak
+#                 port:
+#                   number: 80
+
+
+# --- Route 용 (OpenShift) ---
+apiVersion: route.openshift.io/v1
+kind: Route
 metadata:
-  name: frontend-keycloak-ingress
-  annotations:
-    kubernetes.io/ingress.class: nginx
+  name: frontend-keycloak
 spec:
-  rules:
-    - host: frontend.yoonchang.duckdns.org
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: frontend-keycloak
-                port:
-                  number: 80
+  host: frontend.yoonchang.duckdns.org
+  port:
+    targetPort: 80
+#  tls:
+#    insecureEdgeTerminationPolicy: Redirect
+#    termination: passthrough
+  to:
+    kind: Service
+    name: frontend-keycloak
+    weight: 100    
+  wildcardPolicy: None  
