@@ -29,8 +29,8 @@ spec:
   port:
     targetPort: 80
  tls:
-   insecureEdgeTerminationPolicy: Redirect
-   termination: passthrough
+   insecureEdgeTerminationPolicy: Allow
+   termination: edge
   to:
     kind: Service
     name: frontend-keycloak
