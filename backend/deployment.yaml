@@ -21,4 +21,4 @@ spec:
           - name: SPRING_PROFILES_ACTIVE
             value: "prd"
         ports:
-        - containerPort: 9080
+        - containerPort: 8080
