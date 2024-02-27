@@ -30,5 +30,5 @@ spec:
             port: http
         readinessProbe:
           httpGet:
-            path: /autuator/health/readiness
+            path: /actuator/health/readiness
             port: http
