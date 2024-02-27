@@ -22,3 +22,11 @@ spec:
             value: "prd"
         ports:
         - containerPort: 8080
+        ivenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /autuator/health/readiness
+            port: http
