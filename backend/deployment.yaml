@@ -24,7 +24,7 @@ spec:
           - name: http
             containerPort: 8080
             protocol: TCP
-        ivenessProbe:
+        livenessProbe:
           httpGet:
             path: /actuator/health/liveness
             port: http
