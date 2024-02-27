@@ -21,7 +21,9 @@ spec:
           - name: SPRING_PROFILES_ACTIVE
             value: "prd"
         ports:
-        - containerPort: 8080
+          - name: http
+            containerPort: 8080
+            protocol: TCP
         ivenessProbe:
           httpGet:
             path: /actuator/health/liveness
